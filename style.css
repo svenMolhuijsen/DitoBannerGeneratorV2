@@ -1,0 +1,30 @@
+body {
+    background: #1c1c1c;
+    color: #e3e3e3;
+}
+
+.preview {
+    display: inline-block;
+    backgroud-color: #ff8800;
+    overflow: scroll;
+}
+
+#canvas {
+    border: 1px solid black;
+}
+
+.color {
+    color: transparent !important;
+    width: 40px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.colorcontainer * {
+    display: "inline-block" !important;
+    float: left;
+}
+
+.cp-color-picker {
+    z-index: 2;
+}

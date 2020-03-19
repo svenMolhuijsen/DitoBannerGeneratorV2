@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Dito Banner generator V2</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:900'>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="row">
+    <div class="col-md-8 preview">
+        <canvas width="1920" height="1080" id="canvas"></canvas>
+    </div>
+    <div id="controls" class="col-md-4">
+        <br>
+        <div class="controls">
+            <button id="update" class="btn btn-primary">Update</button>
+            <hr/>
+
+            <div class="form-group row">
+                <label for="above" class="col-sm-2 col-form-label">Boven:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="above" id="above">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="main" class="col-sm-2 col-form-label">Hoofdtekst:</label>
+                <div class="col-sm-10">
+                    <input type="text" name="main" class="form-control" id="main">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="main2" class="col-sm-2 col-form-label">Hoofdtekst (tweede regel):</label>
+                <div class="col-sm-10">
+                    <input type="text" name="main2" class="form-control" id="main2">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="third" class="col-sm-2 col-form-label">Onder:</label>
+            <div class="col-sm-10">
+                <input type="text" name="third" class="form-control" id="third">
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" id="inp" class="custom-file-input" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Kies achtergrondafbeelding</label>
+            </div>
+        </div>
+        <br>
+        <div class="colorcontainer">
+
+            <button id="randomColor" class="btn btn-dark">willekeurige kleuren</button>
+
+            <input class="color color1 form-control" type="text" value="rgba(19, 78, 94, 0.5)">
+            <input class="color color2 form-control" type="text" value="rgba(113, 178, 128, 0.5)">
+            <input class="color accentcolor form-control" type="text" value="rgb(237, 86, 230)">
+        </div>
+
+        <br><br>
+        <hr/>
+
+        <a class="btn btn-success download" id="dwn" href="" role="button" download> download</a>
+    </div>
+</div>
+</div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tinyColorPicker/1.1.1/jqColorPicker.min.js'></script>
+<script src="script.js"></script>
+
+</body>
+</html>
