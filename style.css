@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'DINASTIB';
+    src: url('assets/DINASTI-Bold.otf');
+}
+
+@font-face {
+    font-family: 'DINASTIR';
+    src: url('assets/DINASTI-Regular.otf');
+}
+
+
 body {
     background: #1c1c1c;
     color: #e3e3e3;
@@ -28,3 +39,5 @@ body {
 .cp-color-picker {
     z-index: 2;
 }
+
+

@@ -2,9 +2,9 @@ var imgUrl = null;
 var JSONColours = [];
 var ditoLogo = new Image();
 
-$("#controls").keyup(function () {
-    draw();
-});
+// $("#controls").keyup(function () {
+//     draw();
+// });
 
 //creates list with possible gradients
 $.getJSON(
@@ -15,7 +15,7 @@ $.getJSON(
 );
 
 ditoLogo.src =
-    "http://www.ditonijmegen.nl/wp-content/uploads/2016/10/Dito-logo_uitgeknipt.png";
+    "assets/DitoLogoWit.png";
 
 //makes sure the draw method is called after update, all the logic can be found there
 $("#update").click(function (e) {
@@ -53,17 +53,26 @@ function draw() {
     drawgradient(ctx, canvas);
     writeText(ctx, canvas);
 
-    ctx.strokeStyle = "#FFFFFF";
-    ctx.lineWidth = "18";
-    ctx.strokeRect(50, 50, canvas.width - 100, canvas.height - 100);
+    ctx.fillStyle = "#000000";
+    ctx.save();
+    ctx.translate(0, canvas.height - 300);
+    ctx.rotate(28 * Math.PI / 180);
+    ctx.fillRect(0, 0, 700, 400);
+    ctx.restore();
+    ctx.save();
+    ctx.translate(canvas.width + 100, canvas.height + 100);
+    ctx.rotate(170 * Math.PI / 180);
+    ctx.fillRect(0, 0, 1500, 400);
+    ctx.restore();
+
 
     //draw background image
     ctx.drawImage(
         ditoLogo,
-        canvas.width / 2 - 75,
-        canvas.height / 2 + 100,
-        150,
-        55
+        canvas.width - 500,
+        canvas.height - 175,
+        450,
+        125
     );
     setTimeout(function () {
     }, 500);
@@ -89,7 +98,7 @@ function drawgradient(ctx, canvas) {
 
 function draw3dText(context, text, x, y, textDepth, size = 70) {
     var n;
-    context.font = "900 " + size + "px Montserrat";
+    context.font = +size + "px DINASTIB";
     context.textAlign = "center";
     context.fillStyle = $(".accentcolor").val();
     context.strokeStyle = "black";
@@ -110,16 +119,16 @@ function draw3dText(context, text, x, y, textDepth, size = 70) {
 
 function writeText(ctx, canvas) {
     var p1 = [
-        [canvas.height / 2 - 110, 3, 30],
-        [canvas.height / 2 - 20, 10, 60],
-        [canvas.height / 2, 10, 60],
-        [canvas.height / 2 + 55, 3, 30]
+        [canvas.height / 2 - 220, 3, 60],
+        [canvas.height / 2 - 40, 10, 120],
+        [canvas.height / 2, 20, 120],
+        [canvas.height / 2 + 110, 3, 60]
     ];
     var p2 = [
-        [canvas.height / 2 - 130, 3, 30],
-        [canvas.height / 2 - 60, 10, 60],
-        [canvas.height / 2 + 20, 10, 60],
-        [canvas.height / 2 + 75, 3, 30]
+        [canvas.height / 2 - 260, 3, 60],
+        [canvas.height / 2 - 120, 10, 120],
+        [canvas.height / 2 + 40, 10, 120],
+        [canvas.height / 2 + 150, 3, 60]
     ];
 
     var positions = p2;
